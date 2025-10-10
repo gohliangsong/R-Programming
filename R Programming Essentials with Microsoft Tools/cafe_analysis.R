@@ -78,7 +78,8 @@ loyalty_data <- loyalty_data %>%
     mutate(Tier = case_when(
         LoyaltyPoints < 200 ~ "Bronze",
         LoyaltyPoints < 500 ~ "Silver",
-        TRUE ~ "Gold"
+        LoyaltyPoints >= 500 ~ "Gold",
+        TRUE ~ "NA"
     )
 )
 
